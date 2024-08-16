@@ -1,0 +1,14 @@
+.container--button {
+    width: 100%;
+    height: 64px;
+    background: var(--orange-500);
+    color: var(--text);
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+
+.container--button.secondary {
+    background: var(--pink-800);
+}

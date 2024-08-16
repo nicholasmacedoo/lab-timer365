@@ -1,1 +1,40 @@
-:root {}
+:root {
+
+    /** Variaveis */
+    --background: #121214;
+    --shape: #202024;
+    --box-on-shape: #29292E;
+    --text: #E1E1E6;
+    --line: #7C7C8A;
+    --purple-500: #292A94;
+    --pink-800: #8F0656;
+    --orange-500: #EC7815;
+    --green-500: #299434;
+}
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+:focus {
+    box-shadow: 0 0 0 2px var(--purple-500);
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+
+    -webkit-font-smoothing: antialiased;
+}
+
+body, input, textarea, button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1rem; /** 1rem = 16px */
+}
+
+button {
+    cursor: pointer;
+}
