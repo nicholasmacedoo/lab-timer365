@@ -1,0 +1,55 @@
+.container--history {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    padding: 4rem;
+}
+
+.container--history h1 {
+    font-size: 1.5rem;
+    color: var(--text);
+}
+
+.container--history table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.container--history table th {
+    background: var(--table-header);
+    padding: 1rem;
+    text-align: left;
+    color: var(--text);
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.container--history table th:first-child {
+    border-top-left-radius: 8px;
+    padding-left: 1.5rem;
+}
+
+.container--history table th:last-child {
+    border-top-right-radius: 8px;
+    padding-right: 1.5rem;
+}
+
+.container--history table td {
+    background: var(--box-on-shape);
+    border-top: 2px solid var(--shape);
+    padding: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.container--history table td:first-child {
+    width: 50%;
+    padding-left: 1.5rem;
+}
+
+.container--history table td:last-child {
+    padding-right: 1.5rem;
+} 

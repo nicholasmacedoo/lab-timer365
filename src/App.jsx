@@ -1,15 +1,10 @@
-import { HomePage } from './pages/home'
-import { Layout } from './template'
-
-// import React from 'react'
-// import NomeDoComponente from './pages/home'
+import { RouterProvider } from 'react-router-dom'
+import { routes } from './routes'
 
 function App() {
   return (
     <>
-      <Layout>
-        <HomePage />
-      </Layout>
+      <RouterProvider router={routes} />
     </>
   )
 }
