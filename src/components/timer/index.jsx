@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { differenceInSeconds } from 'date-fns'
+import { useCycle } from '../../contexts/cycle'
 
 import './timer.css'
 
-export function Timer({ activeCycle }) {
+export function Timer() {
+    const { activeCycle, markCurrentCycleAsFinished } = useCycle()
 
     // activeCycle.startDate
     const [amountSecondsPassed, setAmountSecondsPassed] = useState(() => {
@@ -27,7 +29,13 @@ export function Timer({ activeCycle }) {
 
     const minutes = String(minutesAmount).padStart(2, '0')
     const seconds = String(secondsAmount).padStart(2, '0')
-    
+
+    /** Função responsavel por executar o audio de termino */
+    function playSoundCountdown() {
+        const audio = new Audio('/audios/countdown.mp3')
+        audio.play()
+    }
+
     useEffect(() => {
         let intervalId;
 
@@ -37,6 +45,7 @@ export function Timer({ activeCycle }) {
                 const secondsDifference = differenceInSeconds(new Date(), new Date(activeCycle.startDate))
 
                 if(secondsDifference >= totalSeconds) {
+                    markCurrentCycleAsFinished()
                     setAmountSecondsPassed(totalSeconds)
                     clearInterval(intervalId)
                 } else {
@@ -49,7 +58,21 @@ export function Timer({ activeCycle }) {
             clearInterval(intervalId)
         }
 
-    }, [activeCycle, totalSeconds])
+    }, [activeCycle, totalSeconds, markCurrentCycleAsFinished])
+
+    
+    useEffect(() => {
+        console.log(minutesAmount, secondsAmount)
+        if(minutesAmount === 0 && secondsAmount === 3) {
+            playSoundCountdown()
+        }
+    }, [secondsAmount, minutesAmount])
+
+    useEffect(() => {
+        if(activeCycle) {
+            document.title = `${minutes}:${seconds} - ${activeCycle.task}`
+        }
+    }, [activeCycle, minutes, seconds])
 
     return (
         <div className='container--timer'>

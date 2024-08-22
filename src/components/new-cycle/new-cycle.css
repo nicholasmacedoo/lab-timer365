@@ -28,3 +28,14 @@
 .container--new-cycle input[type="number"] {
     max-width: 72px;
 }
+
+.container--input-form {
+    position: relative;
+}
+
+.text-error {
+    color: red;
+    font-size: 0.75rem;
+    position: absolute;
+    bottom: -24px;
+}
