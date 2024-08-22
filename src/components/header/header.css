@@ -1,0 +1,28 @@
+.container--header {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px;
+}
+
+.container--header nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.container--header a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 500ms ease;
+}
+
+.container--header a:hover {
+    color: var(--orange-500);
+}
+
+.container--header a.active {
+    color: var(--orange-500);
+}

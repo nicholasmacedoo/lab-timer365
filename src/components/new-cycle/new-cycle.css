@@ -1,0 +1,41 @@
+.container--new-cycle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--text);
+    font-size: 1.125rem; /** 18px */
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+
+.container--new-cycle input {
+    background: transparent;
+    height: 2.5rem;
+    border: 0;
+    border-bottom: 2px solid var(--line);
+    font-weight: bold;
+    font-size: 1.125rem;
+    color: var(--text);
+    padding: 0 .5rem;
+}
+
+.container--new-cycle input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.container--new-cycle input[type="number"] {
+    max-width: 72px;
+}
+
+.container--input-form {
+    position: relative;
+}
+
+.text-error {
+    color: red;
+    font-size: 0.75rem;
+    position: absolute;
+    bottom: -24px;
+}

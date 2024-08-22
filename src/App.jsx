@@ -1,5 +1,13 @@
+import { RouterProvider } from 'react-router-dom'
+import { routes } from './routes'
+import { CycleProvider } from './contexts/cycle'
+
 function App() {
-  return <h1>Hello world, LAB365.</h1>
+  return (
+    <CycleProvider>
+      <RouterProvider router={routes} />
+    </CycleProvider>
+  )
 }
 // JSX
 
